@@ -1,0 +1,15 @@
+[
+    {
+        "nom": "M\u00e9dallons",
+        "client": "Un monsieur",
+        "telephone": "0616369684",
+        "type": "PLA",
+        "statut": "termin\u00e9",
+        "filament": "BCP de couleur different",
+        "poids": 1000,
+        "imprimante": "imprimante multicouleur",
+        "date_debut": "2025-06-12",
+        "date_fin": "2025-06-21",
+        "fichier": ""
+    }
+]

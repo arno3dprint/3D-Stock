@@ -1,0 +1,42 @@
+{
+    "filament_68498a7b5c7de4.66928272": {
+        "type": "PLA",
+        "marque": "GST 3D",
+        "poids": 1000,
+        "prix": 10,
+        "diametre": 1.75,
+        "couleur": "Blanc",
+        "date_modification": "2025-06-13 16:01:49",
+        "date_ajout": "2025-06-11 13:54:03"
+    },
+    "filament_68498a805c4863.09069308": {
+        "type": "PLA",
+        "marque": "GST 3D",
+        "poids": 1000,
+        "prix": 10,
+        "diametre": 1.75,
+        "couleur": "Rouge",
+        "date_modification": "2025-06-11 16:26:22",
+        "date_ajout": "2025-06-11 13:54:08"
+    },
+    "filament_68498a8507d908.47980624": {
+        "type": "PLA",
+        "marque": "GST 3D",
+        "poids": 1000,
+        "prix": 10,
+        "diametre": 1.75,
+        "couleur": "Orange",
+        "date_modification": "2025-06-11 16:26:27",
+        "date_ajout": "2025-06-11 13:54:13"
+    },
+    "filament_68498f73a9f943.55228673": {
+        "type": "PLA",
+        "marque": "GST 3D",
+        "poids": 1000,
+        "prix": 10,
+        "diametre": 1.75,
+        "couleur": "Marron",
+        "date_modification": "2025-06-13 16:02:06",
+        "date_ajout": "2025-06-11 14:15:15"
+    }
+}

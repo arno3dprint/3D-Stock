@@ -1,0 +1,73 @@
+<?php
+
+class ManipuleCsv
+{
+    private $strFichier;            
+    private $tabCsv;
+    private $pointeur = 0;
+    
+    public function __construct($fichier)
+    {
+        if (is_file($fichier)) {
+            $this->strFichier = $fichier;
+            $this->chargeCsv();
+        }
+    }
+
+    private function chargeCsv()
+    {
+        $this->tabCsv = array();
+        if (file_exists($this->strFichier)) {
+            if (($pointeurFichier = fopen($this->strFichier, "r")) !== FALSE) {
+                while (($tabLigne = fgetcsv($pointeurFichier, 1000, ";")) !== FALSE) {
+                    $this->tabCsv[] = $tabLigne;
+                }
+                fclose($pointeurFichier);
+                return $this->tabCsv;
+            }
+        }
+        return false;
+    }
+
+    public function checkUser($username, $password)
+    {
+        foreach ($this->tabCsv as $ligne) {
+            if ($ligne[0] == $username) {  // Assuming username is in the first column
+                if (password_verify($password, $ligne[1])) { // Assuming password is in the second column
+                    return true; // User found and password matches
+                }
+            }
+        }
+        return false; // User not found or password doesn't match
+    }
+}
+
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Path to the CSV file containing user data
+    $csv = new ManipuleCsv('users.csv');  // Assuming 'users.csv' contains usernames and hashed passwords
+
+    if ($csv->checkUser($username, $password)) {
+        $_SESSION['username'] = $username;
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "Nom d'utilisateur ou mot de passe incorrect.";
+    }
+}
+
+?>
+
+<form action="connexion.php" method="POST">
+    <label for="username">Nom d'utilisateur :</label>
+    <input type="text" id="username" name="username" required>
+    
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="password" required>
+    
+    <button type="submit">Se connecter</button>
+</form>
